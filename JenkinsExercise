@@ -2,8 +2,8 @@ pipeline {
   agents any
   stages {
     stage ('Clone repository'){
-      if ! [ -d chaperootodo_client ]; then
-        git clone https://gitlab.com/qacdevops/chaperootodo_client.git
+      if ( [ -d chaperootodo_client ]; then
+        git clone https://gitlab.com/qacdevops/chaperootodo_client.git )
       fi
     }
     stage ('Install docker + docker compose') {
